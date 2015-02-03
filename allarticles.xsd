@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Articles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ArticleSubset" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ArticleNumber" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="DisposableQuantity" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+              <xs:element name="EAN" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+              <xs:element name="Housework" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+              <xs:element name="PurchasePrice" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+              <xs:element name="QuantityInStock" type="xs:string" minOccurs="0" msdata:Ordinal="6" />
+              <xs:element name="ReservedQuantity" type="xs:string" minOccurs="0" msdata:Ordinal="7" />
+              <xs:element name="StockPlace" type="xs:string" minOccurs="0" msdata:Ordinal="8" />
+              <xs:element name="StockValue" type="xs:string" minOccurs="0" msdata:Ordinal="9" />
+              <xs:element name="Unit" type="xs:string" minOccurs="0" msdata:Ordinal="10" />
+              <xs:element name="WebshopArticle" type="xs:string" minOccurs="0" msdata:Ordinal="11" />
+            </xs:sequence>
+            <xs:attribute name="url" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="TotalResources" type="xs:string" />
+      <xs:attribute name="TotalPages" type="xs:string" />
+      <xs:attribute name="CurrentPage" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Articles" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
