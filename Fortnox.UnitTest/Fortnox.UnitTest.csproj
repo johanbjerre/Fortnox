@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NMock3">
-      <HintPath>..\..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
+    <Reference Include="NMock3, Version=3.3.30.0, Culture=neutral, PublicKeyToken=cf53a760d95f4c33, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
     </Reference>
     <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

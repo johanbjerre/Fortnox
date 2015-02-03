@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FortnoxAPILibrary">
-      <HintPath>..\..\NETSDK-45-FortnoxAPI\FortnoxAPILibrary.dll</HintPath>
+    <Reference Include="FortnoxAPILibrary, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Compile\NETSDK-45-FortnoxAPI\FortnoxAPILibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
