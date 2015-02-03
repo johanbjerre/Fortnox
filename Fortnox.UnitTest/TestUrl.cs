@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using Fortnox.Helpers;
 using Fortnox.ValueObjects.Article;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;
-using NMock.Actions;
 using SoftHouse.Scraper.Interfaces;
 using SoftHouse.Scraper.ValueObjects;
 

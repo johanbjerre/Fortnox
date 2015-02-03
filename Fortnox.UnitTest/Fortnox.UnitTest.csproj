@@ -74,7 +74,6 @@
     <Content Include="Xml\Article1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Xml\XMLFile1.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xmls.resx">
