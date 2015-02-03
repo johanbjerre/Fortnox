@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Fortnox.TestApp.Constants
+﻿namespace Fortnox.TestApp.Constants
 {
     public class AccountConstants
     {
         public const string
-            AuthorizationCode = "",
-            ClientSecret = "",
-            ClientID = "",
-            FirstAccessToken = "",
-            AccessToken = "";
+            AUTHORIZATION_CODE = "",
+            CLIENT_SECRET = "",
+            CLIENT_ID = "",
+            FIRST_ACCESS_TOKEN = "",
+            ACCESS_TOKEN = "";
     }
 }

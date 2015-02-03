@@ -56,6 +56,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Xmls.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Xmls.resx</DependentUpon>
+    </Compile>
     <Compile Include="TestUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +74,13 @@
     <Content Include="Xml\Article1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Xml\XMLFile1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xmls.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Xmls.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

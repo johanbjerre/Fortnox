@@ -21,13 +21,13 @@ namespace Fortnox.TestApp
 
         private void getAllArticlesButton_Click(object sender, EventArgs e)
         {
-            var test = Fortnox.ApiArticle.GetAllArticles(Constants.AccountConstants.AccessToken, Constants.AccountConstants.ClientSecret);
+            var test = Fortnox.ApiArticle.GetAllArticles(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FortnoxAPILibrary.ConnectionCredentials.AccessToken = Constants.AccountConstants.AccessToken;
-            FortnoxAPILibrary.ConnectionCredentials.ClientSecret = Constants.AccountConstants.ClientSecret;
+            FortnoxAPILibrary.ConnectionCredentials.AccessToken = Constants.AccountConstants.ACCESS_TOKEN;
+            FortnoxAPILibrary.ConnectionCredentials.ClientSecret = Constants.AccountConstants.CLIENT_SECRET;
 
             try
             {
@@ -51,7 +51,7 @@ namespace Fortnox.TestApp
         private void GetArticle_Click(object sender, EventArgs e)
         {
             var articleNumber = articleNumberBox.Text;
-            var test=Fortnox.ApiArticle.GetArticle(Constants.AccountConstants.AccessToken, Constants.AccountConstants.ClientSecret,articleNumber);
+            var test=Fortnox.ApiArticle.GetArticle(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET,articleNumber);
         }
     }
 }
