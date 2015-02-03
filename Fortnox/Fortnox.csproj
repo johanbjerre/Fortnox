@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
+      <HintPath>..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

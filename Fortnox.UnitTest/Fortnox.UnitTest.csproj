@@ -38,8 +38,9 @@
     <Reference Include="NMock3">
       <HintPath>..\..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
     </Reference>
-    <Reference Include="SoftHouse.Scraper">
-      <HintPath>..\..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
+    <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
