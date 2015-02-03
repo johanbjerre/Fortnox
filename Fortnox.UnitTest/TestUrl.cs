@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Fortnox.Constants;
 using Fortnox.Helpers;
 using Fortnox.ValueObjects.Article;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
