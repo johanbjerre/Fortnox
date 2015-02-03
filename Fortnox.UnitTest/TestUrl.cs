@@ -28,7 +28,7 @@ namespace Fortnox.UnitTest
             _accept = SoftHouse.Scraper.Constants.RequestConstants.ACCEPT_XML;
             _headers = new List<Header>
                 {
-                    new Header {HeaderName = Constants.FortnoxConstants.ACCEPT_TOKEN, HeaderValue = "abc"},
+                    new Header {HeaderName = Constants.FortnoxConstants.ACCESS_TOKEN, HeaderValue = "abc"},
                     new Header {HeaderName = Constants.FortnoxConstants.CLIENT_SECRET, HeaderValue = "def"}
                 };
             }

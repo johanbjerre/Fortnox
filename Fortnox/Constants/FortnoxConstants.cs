@@ -8,7 +8,7 @@
             ACCEPT = "application/xml";
 
         public const string
-            ACCEPT_TOKEN = "Accept-Token",
+            ACCESS_TOKEN = "Access-Token",
             CLIENT_SECRET = "Client-Secret";
     }
 }

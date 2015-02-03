@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.articleNumberBox = new System.Windows.Forms.RichTextBox();
             this.GetArticle = new System.Windows.Forms.Button();
+            this.appVeyor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // getAllArticlesButton
@@ -73,11 +74,22 @@
             this.GetArticle.UseVisualStyleBackColor = true;
             this.GetArticle.Click += new System.EventHandler(this.GetArticle_Click);
             // 
+            // appVeyor
+            // 
+            this.appVeyor.Location = new System.Drawing.Point(13, 114);
+            this.appVeyor.Name = "appVeyor";
+            this.appVeyor.Size = new System.Drawing.Size(116, 23);
+            this.appVeyor.TabIndex = 4;
+            this.appVeyor.Text = "AppVeyor";
+            this.appVeyor.UseVisualStyleBackColor = true;
+            this.appVeyor.Click += new System.EventHandler(this.appVeyor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 425);
+            this.Controls.Add(this.appVeyor);
             this.Controls.Add(this.GetArticle);
             this.Controls.Add(this.articleNumberBox);
             this.Controls.Add(this.button1);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox articleNumberBox;
         private System.Windows.Forms.Button GetArticle;
+        private System.Windows.Forms.Button appVeyor;
     }
 }
 

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Net;
 using System.Windows.Forms;
 using FortnoxAPILibrary;
 using FortnoxAPILibrary.Connectors;
+
 
 namespace Fortnox.TestApp
 {
@@ -26,19 +22,18 @@ namespace Fortnox.TestApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FortnoxAPILibrary.ConnectionCredentials.AccessToken = Constants.AccountConstants.ACCESS_TOKEN;
-            FortnoxAPILibrary.ConnectionCredentials.ClientSecret = Constants.AccountConstants.CLIENT_SECRET;
+            ConnectionCredentials.AccessToken = Constants.AccountConstants.ACCESS_TOKEN;
+            ConnectionCredentials.ClientSecret = Constants.AccountConstants.CLIENT_SECRET;
 
             try
             {
-                var customer = new Customer();
-                customer.CustomerNumber = "3345345345345345";
-                customer.Name = "Stefan Andessrsson";
+                var customer = new Customer {CustomerNumber = "3345345345345345", Name = "Stefan Andessrsson"};
 
                 var customerConnector = new CustomerConnector();
                 customerConnector.Create(customer);
             }
-            catch(Exception exception){
+            catch (Exception exception)
+            {
                 var i = exception.Message;
             }
         }
@@ -51,7 +46,36 @@ namespace Fortnox.TestApp
         private void GetArticle_Click(object sender, EventArgs e)
         {
             var articleNumber = articleNumberBox.Text;
-            var test=Fortnox.ApiArticle.GetArticle(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET,articleNumber);
+            var test = ApiArticle.GetArticle(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET, articleNumber);
+        }
+
+        private void appVeyor_Click(object sender, EventArgs e)
+        {
+            /*
+            https://ci.appveyor.com/api/environments/h7bgpmu9xklrxmraisg5/deployments
+            var urlRoles = "https://ci.appveyor.com/api/roles";
+            var urlEnvironments = "https://ci.appveyor.com/api/environments";
+            var urlProjects="https://ci.appveyor.com/api/projects";
+            */
+            const string urlFortnox = "https://ci.appveyor.com/api/projects/johanbjerre/fortnox";
+            const string token = "";
+
+            var request = (HttpWebRequest)WebRequest.Create(urlFortnox);
+            request.Accept = "application/xml";
+            request.Headers.Add("Authorization", "Bearer " + token);
+
+            using (var response = request.GetResponse())
+            {
+                using (var stream = response.GetResponseStream())
+                {
+                    if (stream == null) return;
+                    using (var reader = new StreamReader(stream))
+                    {
+                        var result = reader.ReadToEnd();
+                    }
+                }
+            }
         }
     }
+
 }

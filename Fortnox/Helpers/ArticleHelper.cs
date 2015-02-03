@@ -34,7 +34,7 @@ namespace Fortnox.Helpers
             return article;
         }
 
-        internal static TResponse Deserialize<TResponse>(string inputString)
+        private static TResponse Deserialize<TResponse>(string inputString)
         {
             var serializer = new XmlSerializer(typeof(TResponse));
             var memStream = new MemoryStream(Encoding.UTF8.GetBytes(inputString));
