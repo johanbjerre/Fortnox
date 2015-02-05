@@ -19,7 +19,7 @@ namespace Fortnox.Helpers
             {
                 var httpWebResponse = webException.Response as HttpWebResponse;
 
-                if (httpWebResponse != null && httpWebResponse.StatusCode == HttpStatusCode.BadRequest)
+                if (httpWebResponse.IsNotNull() && httpWebResponse.StatusCode == HttpStatusCode.BadRequest)
                     return new TResponse { ErrorMessage = HttpStatusCode.BadRequest.ToString(), Success = false };
                 throw;
             }

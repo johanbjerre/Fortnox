@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using Fortnox.ValueObjects;
@@ -40,7 +41,7 @@ namespace Fortnox.Helpers
         private static TResponse Get<TResponse>(string url, string accessToken, string clientSecret,
                                                 IHtmlScraper scraper = null) where TResponse : ResponseBase, new()
         {
-            if (scraper == null)
+            if (scraper.IsNull())
                 scraper = new HtmlScraper();
 
             RequestHelper.MakeGetRequest(url, accessToken, clientSecret, scraper);

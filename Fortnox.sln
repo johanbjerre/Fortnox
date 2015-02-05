@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox", "Fortnox\Fortnox.csproj", "{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox.TestApp", "Fortnox.TestApp\Fortnox.TestApp.csproj", "{92131D5C-DF84-4693-AE5C-CE3CB4F41BE0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox.UnitTest", "Fortnox.UnitTest\Fortnox.UnitTest.csproj", "{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}"
 EndProject
 Global
@@ -15,12 +13,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92131D5C-DF84-4693-AE5C-CE3CB4F41BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92131D5C-DF84-4693-AE5C-CE3CB4F41BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92131D5C-DF84-4693-AE5C-CE3CB4F41BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92131D5C-DF84-4693-AE5C-CE3CB4F41BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Release|Any CPU.ActiveCfg = Release|Any CPU

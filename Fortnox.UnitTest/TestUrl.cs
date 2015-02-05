@@ -56,37 +56,5 @@ namespace Fortnox.UnitTest
             var result = obj.InvokeStatic("GetArticle", args);
             Assert.AreEqual(expected, result);
         }
-
-        public static string GetAbsolutePath(string relativePath)
-        {
-            if (relativePath.StartsWith("\\\\") || !(relativePath.StartsWith("..") || relativePath.StartsWith("\\")))
-                return relativePath;
-
-            var appPath = AppDomain.CurrentDomain.BaseDirectory;
-            var appPathDirectories = appPath.Split(Path.DirectorySeparatorChar);
-            var relativePathDirectories = relativePath.Split(Path.DirectorySeparatorChar);
-            var appPathIndex = appPathDirectories.Length - 1;
-            var resultPath = string.Empty;
-
-            foreach (var relativePathDirectory in relativePathDirectories)
-            {
-                if (relativePathDirectory == "..")
-                {
-                    appPathIndex -= 1;
-                    continue;
-                }
-                resultPath += string.Format("\\{0}", relativePathDirectory);
-            }
-
-            while (resultPath.StartsWith("\\"))
-                resultPath = resultPath.Substring(1);
-
-            for (int i = appPathIndex; i >= 0; i--)
-            {
-                if (!(appPathDirectories[i] == null || appPathDirectories[i] == ""))
-                    resultPath = string.Format("{0}\\{1}", appPathDirectories[i], resultPath);
-            }
-            return resultPath;
-        }
     }
 }
