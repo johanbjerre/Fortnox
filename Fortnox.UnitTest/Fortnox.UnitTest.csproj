@@ -38,8 +38,7 @@
   <ItemGroup>
     <Reference Include="NMock3, Version=3.3.30.0, Culture=neutral, PublicKeyToken=cf53a760d95f4c33, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
     </Reference>
     <Reference Include="SoftHouse.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
