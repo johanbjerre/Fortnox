@@ -106,4 +106,9 @@ namespace Fortnox.ValueObjects.Article
         [XmlAttribute]
         public string url { get; set; }
     }
+
+
+    
 }
+
+

@@ -1,25 +1,12 @@
 ﻿using System;
-using Fortnox.Helpers;
+using System.Net;
 using Fortnox.ValueObjects;
-using Fortnox.ValueObjects.Article;
-using Fortnox.ValueObjects.Articles;
 
-namespace Fortnox
+namespace Fortnox.Helpers
 {
-    public static class ApiArticle
+    public static class ApiHelpers
     {
-        public static Articles GetAllArticles(string accessToken, string clientSecret)
-        {
-            return TryWrap(() => ArticleHelper.GetAllArticles(accessToken, clientSecret,null), "Unable to get all articles");
-        }
-
-        public static Article GetArticle(string accessToken, string clientSecret, string articleNumber)
-        {
-            return TryWrap(() => ArticleHelper.GetArticle(accessToken, clientSecret, articleNumber, null),
-                           string.Format("Unable to get article with number '{0}'", articleNumber));
-        }
-
-        private static TResponse TryWrap<TResponse>(Func<TResponse> method, string errorMessage) where TResponse : ResponseBase, new()
+        internal static TResponse TryWrap<TResponse>(Func<TResponse> method, string errorMessage) where TResponse : ResponseBase, new()
         {
             try
             {
@@ -27,6 +14,14 @@ namespace Fortnox
                 result.ErrorMessage = string.Empty;
                 result.Success = true;
                 return result;
+            }
+            catch (WebException webException)
+            {
+                var httpWebResponse = webException.Response as HttpWebResponse;
+
+                if (httpWebResponse != null && httpWebResponse.StatusCode == HttpStatusCode.BadRequest)
+                    return new TResponse { ErrorMessage = HttpStatusCode.BadRequest.ToString(), Success = false };
+                throw;
             }
             catch (Exception exception)
             {
@@ -38,7 +33,7 @@ namespace Fortnox
             }
         }
 
-        private static TResponse TryWrap<TRequest, TResponse>(Func<TRequest, TResponse> method, string errorMessage, TRequest request) where TResponse : ResponseBase, new()
+        internal static TResponse TryWrap<TRequest, TResponse>(Func<TRequest, TResponse> method, string errorMessage, TRequest request) where TResponse : ResponseBase, new()
         {
             try
             {

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using Fortnox.Constants;
 using Fortnox.Helpers;
 using Fortnox.ValueObjects.Article;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;
 using SoftHouse.Scraper.Interfaces;
-using SoftHouse.Scraper.ValueObjects;
 
 namespace Fortnox.UnitTest
 {
@@ -15,35 +12,26 @@ namespace Fortnox.UnitTest
     public class TestUrl
     {
         private Mock<IHtmlScraper> _htmlScraper;
-        private string _contentType;
-        private string _accept;
-        private List<Header> _headers;
-       
+
         [TestInitialize]
         public void TestInit()
         {
             var mockFactory = new MockFactory();
             _htmlScraper = mockFactory.CreateMock<IHtmlScraper>();
-            _contentType = SoftHouse.Scraper.Constants.RequestConstants.CONTENT_TYPE_XML;
-            _accept = SoftHouse.Scraper.Constants.RequestConstants.ACCEPT_XML;
-            _headers = new List<Header>
-                {
-                    new Header {HeaderName = Constants.FortnoxConstants.ACCESS_TOKEN, HeaderValue = "abc"},
-                    new Header {HeaderName = Constants.FortnoxConstants.CLIENT_SECRET, HeaderValue = "def"}
-                };
-            }
-
+        }
 
         [TestMethod]
         public void TestGetArticleFlow()
         {
             var articleNumber = "1";
-            var url = "https://api.fortnox.se/3/article/" + articleNumber;
-            var inputContentStartsidaSp = Xmls.Article1;
-            _htmlScraper.Expects.AtLeast(0).GetProperty(d => d.LastContent).WillReturn(inputContentStartsidaSp);
-            _htmlScraper.Expects.AtLeast(0).Method(d => d.PerformRequest(url, null, null, null, null, null)).WithAnyArguments().WillReturn("");
+            var url = "https://api.fortnox.se/3/articles/" + articleNumber;
+            _htmlScraper.Expects.AtLeast(0).GetProperty(d => d.LastContent).WillReturn(Xmls.Article1);
+            _htmlScraper.Expects.AtLeast(0)
+                        .Method(d => d.PerformRequest(url, null, null, null, null, null))
+                        .WithAnyArguments()
+                        .WillReturn("");
 
-            var obj = new PrivateType(typeof(ArticleHelper));
+            var obj = new PrivateType(typeof(CommunicationHelper));
             var args = new object[] { "abc", "def", "1", _htmlScraper.MockObject };
             var response = (Article)obj.InvokeStatic("GetArticle", args);
             Assert.AreEqual(articleNumber, response.ArticleNumber);

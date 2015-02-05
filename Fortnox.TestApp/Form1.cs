@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using Fortnox.Api;
 using FortnoxAPILibrary;
 using FortnoxAPILibrary.Connectors;
 
@@ -17,25 +18,23 @@ namespace Fortnox.TestApp
 
         private void getAllArticlesButton_Click(object sender, EventArgs e)
         {
-            var test = Fortnox.ApiArticle.GetAllArticles(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET);
+            var test = ApiArticle.ListAll(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var art = new Fortnox.ValueObjects.Article.Article { url = "" };
             ConnectionCredentials.AccessToken = Constants.AccountConstants.ACCESS_TOKEN;
             ConnectionCredentials.ClientSecret = Constants.AccountConstants.CLIENT_SECRET;
 
-            try
-            {
-                var customer = new Customer {CustomerNumber = "3345345345345345", Name = "Stefan Andessrsson"};
+            var connector = new AccountConnector();
+            //var contract = new ContractConnector()
+            //contract.Create()
+            var result = connector.Create(new Account { Number = "234234678678678768324234234", Description = "test", VATCode = "sdfsdfsdfdsf" });
+            //var customer = new Customer {CustomerNumber = "3345345345345345", Name = "Stefan Andessrsson"};
 
-                var customerConnector = new CustomerConnector();
-                customerConnector.Create(customer);
-            }
-            catch (Exception exception)
-            {
-                var i = exception.Message;
-            }
+            //var customerConnector = new CustomerConnector();
+            //customerConnector.Create(customer);
         }
 
         private void articleNumberBox_TextChanged(object sender, EventArgs e)
@@ -45,8 +44,8 @@ namespace Fortnox.TestApp
 
         private void GetArticle_Click(object sender, EventArgs e)
         {
-            var articleNumber = articleNumberBox.Text;
-            var test = ApiArticle.GetArticle(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET, articleNumber);
+            var number = articleNumberBox.Text;
+            var test = ApiArticle.Retrieve(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET, number);
         }
 
         private void appVeyor_Click(object sender, EventArgs e)
@@ -75,6 +74,17 @@ namespace Fortnox.TestApp
                     }
                 }
             }
+        }
+
+        private void getAllAccounts_Click(object sender, EventArgs e)
+        {
+            var test = ApiAccount.ListAll(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET);
+        }
+
+        private void getAccount_Click(object sender, EventArgs e)
+        {
+            var number = accountNumberBox.Text;
+            var test = ApiAccount.Retrieve(Constants.AccountConstants.ACCESS_TOKEN, Constants.AccountConstants.CLIENT_SECRET, number);
         }
     }
 

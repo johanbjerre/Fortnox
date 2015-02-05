@@ -44,12 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiArticle.cs" />
-    <Compile Include="Helpers\ArticleHelper.cs" />
+    <Compile Include="Api\ApiAccount.cs" />
+    <Compile Include="Api\ApiArticle.cs" />
+    <Compile Include="Helpers\ApiHelpers.cs" />
+    <Compile Include="Helpers\CommunicationHelper.cs" />
     <Compile Include="Constants\FortnoxConstants.cs" />
     <Compile Include="Helpers\RequestHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\Accounts\AccountsAccountSubset.cs" />
+    <Compile Include="ValueObjects\Account\Account.cs" />
+    <Compile Include="ValueObjects\Accounts\Accounts.cs" />
     <Compile Include="ValueObjects\Articles\ArticlesArticleSubset.cs" />
     <Compile Include="ValueObjects\Articles\Articles.cs" />
     <Compile Include="ValueObjects\Articles\NewDataSet.cs" />
