@@ -43,13 +43,11 @@
     </Reference>
     <Reference Include="SoftHouse.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Compile\SoftHouse\SoftHouse.Common\SoftHouse.Common.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\Compile\SoftHouse.Common\SoftHouse.Common.dll</HintPath>
     </Reference>
     <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Compile\SoftHouse\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
