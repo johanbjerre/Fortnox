@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.articleNumberBox = new System.Windows.Forms.RichTextBox();
             this.GetArticle = new System.Windows.Forms.Button();
-            this.appVeyor = new System.Windows.Forms.Button();
             this.getAllAccounts = new System.Windows.Forms.Button();
             this.getAccount = new System.Windows.Forms.Button();
             this.accountNumberBox = new System.Windows.Forms.RichTextBox();
@@ -77,16 +76,6 @@
             this.GetArticle.UseVisualStyleBackColor = true;
             this.GetArticle.Click += new System.EventHandler(this.GetArticle_Click);
             // 
-            // appVeyor
-            // 
-            this.appVeyor.Location = new System.Drawing.Point(441, 12);
-            this.appVeyor.Name = "appVeyor";
-            this.appVeyor.Size = new System.Drawing.Size(116, 23);
-            this.appVeyor.TabIndex = 4;
-            this.appVeyor.Text = "AppVeyor";
-            this.appVeyor.UseVisualStyleBackColor = true;
-            this.appVeyor.Click += new System.EventHandler(this.appVeyor_Click);
-            // 
             // getAllAccounts
             // 
             this.getAllAccounts.Location = new System.Drawing.Point(12, 84);
@@ -123,7 +112,6 @@
             this.Controls.Add(this.accountNumberBox);
             this.Controls.Add(this.getAccount);
             this.Controls.Add(this.getAllAccounts);
-            this.Controls.Add(this.appVeyor);
             this.Controls.Add(this.GetArticle);
             this.Controls.Add(this.articleNumberBox);
             this.Controls.Add(this.button1);
@@ -140,7 +128,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox articleNumberBox;
         private System.Windows.Forms.Button GetArticle;
-        private System.Windows.Forms.Button appVeyor;
         private System.Windows.Forms.Button getAllAccounts;
         private System.Windows.Forms.Button getAccount;
         private System.Windows.Forms.RichTextBox accountNumberBox;

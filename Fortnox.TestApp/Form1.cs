@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Net;
 using System.Windows.Forms;
 using Fortnox.Api;
 using FortnoxAPILibrary;
@@ -50,30 +48,7 @@ namespace Fortnox.TestApp
 
         private void appVeyor_Click(object sender, EventArgs e)
         {
-            /*
-            https://ci.appveyor.com/api/environments/h7bgpmu9xklrxmraisg5/deployments
-            var urlRoles = "https://ci.appveyor.com/api/roles";
-            var urlEnvironments = "https://ci.appveyor.com/api/environments";
-            var urlProjects="https://ci.appveyor.com/api/projects";
-            */
-            const string urlFortnox = "https://ci.appveyor.com/api/projects/johanbjerre/fortnox";
-            const string token = "";
-
-            var request = (HttpWebRequest)WebRequest.Create(urlFortnox);
-            request.Accept = "application/xml";
-            request.Headers.Add("Authorization", "Bearer " + token);
-
-            using (var response = request.GetResponse())
-            {
-                using (var stream = response.GetResponseStream())
-                {
-                    if (stream == null) return;
-                    using (var reader = new StreamReader(stream))
-                    {
-                        var result = reader.ReadToEnd();
-                    }
-                }
-            }
+            
         }
 
         private void getAllAccounts_Click(object sender, EventArgs e)
