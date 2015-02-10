@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using Fortnox.Helpers;
+﻿using Fortnox.Helpers;
 using Fortnox.ValueObjects.Article;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;

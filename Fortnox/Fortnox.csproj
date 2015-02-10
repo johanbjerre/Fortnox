@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Compile\Fortnox\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,19 +25,17 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Compile\Fortnox\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SoftHouse.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Compile\SoftHouse.Common\SoftHouse.Common.dll</HintPath>
+    <Reference Include="SoftHouse.Common">
+      <HintPath>..\Compile\SoftHouse.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
+    <Reference Include="SoftHouse.Scraper">
+      <HintPath>..\Compile\SoftHouse.Scraper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,6 +66,12 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo f | xcopy $(TargetDir)..\SoftHouse.Scraper\SoftHouse.Scraper.dll $(SolutionDir)Compile\SoftHouse.Scraper.dll /Y
+echo f | xcopy $(TargetDir)..\SoftHouse.Common\SoftHouse.Common.dll $(SolutionDir)Compile\SoftHouse.Common.dll /Y
+echo f | xcopy $(TargetDir)..\NETSDK-45-FortnoxAPI\FortnoxAPILibrary.dll $(SolutionDir)Compile\FortnoxAPILibrary.dll /Y
+echo f | xcopy $(TargetDir)..\NMock\3.3.30\NMock3.dll $(SolutionDir)Compile\NMock3.dll /Y</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

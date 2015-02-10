@@ -38,15 +38,11 @@
   <ItemGroup>
     <Reference Include="NMock3, Version=3.3.30.0, Culture=neutral, PublicKeyToken=cf53a760d95f4c33, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Compile\NMock\3.3.30\NMock3.dll</HintPath>
-    </Reference>
-    <Reference Include="SoftHouse.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Compile\SoftHouse.Common\SoftHouse.Common.dll</HintPath>
+      <HintPath>..\Compile\NMock3.dll</HintPath>
     </Reference>
     <Reference Include="SoftHouse.Scraper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Compile\SoftHouse.Scraper\SoftHouse.Scraper.dll</HintPath>
+      <HintPath>..\Compile\SoftHouse.Scraper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -81,7 +77,6 @@
     <ProjectReference Include="..\Fortnox\Fortnox.csproj">
       <Project>{b6411f6c-bc38-4127-9ef2-fe65f55bd5d8}</Project>
       <Name>Fortnox</Name>
-      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Choose>
