@@ -2,37 +2,37 @@
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
-using Fortnox.ValueObjects;
-using Fortnox.ValueObjects.Account;
-using Fortnox.ValueObjects.Accounts;
-using Fortnox.ValueObjects.Article;
-using Fortnox.ValueObjects.Articles;
+using Fortnox.Services.ValueObjects;
+using Fortnox.Services.ValueObjects.Account;
+using Fortnox.Services.ValueObjects.Accounts;
+using Fortnox.Services.ValueObjects.Article;
+using Fortnox.Services.ValueObjects.Articles;
 using SoftHouse.Scraper;
 using SoftHouse.Scraper.Interfaces;
 
-namespace Fortnox.Helpers
+namespace Fortnox.Services.Helpers
 {
     public static class CommunicationHelper
     {
-        internal static Articles GetAllArticles(string accessToken, string clientSecret, IHtmlScraper scraper = null)
+        public static Articles GetAllArticles(string accessToken, string clientSecret, IHtmlScraper scraper = null)
         {
             var url = UrlHelper.GetAllArticles();
             return Get<Articles>(url, accessToken, clientSecret, scraper);
         }
 
-        internal static Article GetArticle(string accessToken, string clientSecret, string number, IHtmlScraper scraper = null)
+        public static Article GetArticle(string accessToken, string clientSecret, string number, IHtmlScraper scraper = null)
         {
             var url = UrlHelper.GetArticle(number);
             return Get<Article>(url, accessToken, clientSecret, scraper);
         }
 
-        internal static Accounts GetAllAccounts(string accessToken, string clientSecret, IHtmlScraper scraper = null)
+        public static Accounts GetAllAccounts(string accessToken, string clientSecret, IHtmlScraper scraper = null)
         {
             var url = UrlHelper.GetAllAccounts();
             return Get<Accounts>(url, accessToken, clientSecret, scraper);
         }
 
-        internal static Account GetAccount(string accessToken, string clientSecret, string number, IHtmlScraper scraper = null)
+        public static Account GetAccount(string accessToken, string clientSecret, string number, IHtmlScraper scraper = null)
         {
             var url = UrlHelper.GetAccount(number);
             return Get<Account>(url, accessToken, clientSecret, scraper);

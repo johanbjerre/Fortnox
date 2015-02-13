@@ -1,5 +1,5 @@
-﻿using Fortnox.Helpers;
-using Fortnox.ValueObjects.Article;
+﻿using Fortnox.Services.Helpers;
+using Fortnox.Services.ValueObjects.Article;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NMock;
 using SoftHouse.Scraper.Interfaces;

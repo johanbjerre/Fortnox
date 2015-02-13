@@ -1,8 +1,10 @@
-﻿using Fortnox.Helpers;
-using Fortnox.ValueObjects.Article;
-using Fortnox.ValueObjects.Articles;
+﻿using Fortnox.Services.Helpers;
+using Fortnox.Services.ValueObjects.Article;
+using Fortnox.Services.ValueObjects.Articles;
 
-namespace Fortnox.Api
+// ReSharper disable CheckNamespace
+namespace Fortnox
+// ReSharper restore CheckNamespace
 {
     public static class ApiArticle
     {
@@ -17,8 +19,5 @@ namespace Fortnox.Api
             return ApiHelpers.TryWrap(() => CommunicationHelper.GetArticle(accessToken, clientSecret, number),
                            string.Format("Unable to get article with number '{0}'", number));
         }
-
-
-        
     }
 }

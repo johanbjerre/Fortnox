@@ -1,4 +1,4 @@
-﻿namespace Fortnox.Constants
+﻿namespace Fortnox.Services.Constants
 {
     public class FortnoxConstants
     {

@@ -1,4 +1,4 @@
-﻿namespace Fortnox.ValueObjects.Account
+﻿namespace Fortnox.Services.ValueObjects.Account
 {
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]

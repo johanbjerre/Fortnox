@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Net;
-using Fortnox.ValueObjects;
+using Fortnox.Services.ValueObjects;
 
-namespace Fortnox.Helpers
+namespace Fortnox.Services.Helpers
 {
     public static class ApiHelpers
     {
-        internal static TResponse TryWrap<TResponse>(Func<TResponse> method, string errorMessage) where TResponse : ResponseBase, new()
+        public static TResponse TryWrap<TResponse>(Func<TResponse> method, string errorMessage) where TResponse : ResponseBase, new()
         {
             try
             {
@@ -33,7 +33,7 @@ namespace Fortnox.Helpers
             }
         }
 
-        internal static TResponse TryWrap<TRequest, TResponse>(Func<TRequest, TResponse> method, string errorMessage, TRequest request) where TResponse : ResponseBase, new()
+        public static TResponse TryWrap<TRequest, TResponse>(Func<TRequest, TResponse> method, string errorMessage, TRequest request) where TResponse : ResponseBase, new()
         {
             try
             {

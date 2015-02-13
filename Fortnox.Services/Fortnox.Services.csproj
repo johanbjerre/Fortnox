@@ -1,23 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6411F6C-BC38-4127-9EF2-FE65F55BD5D8}</ProjectGuid>
+    <ProjectGuid>{D9191F94-8BB8-4304-8BFA-4D9914650FB9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fortnox</RootNamespace>
-    <AssemblyName>Fortnox</AssemblyName>
+    <RootNamespace>Fortnox.Services</RootNamespace>
+    <AssemblyName>Fortnox.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Compile\Fortnox\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Compile\Fortnox\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,21 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ApiAccount.cs" />
-    <Compile Include="Api\ApiArticle.cs" />
+    <Compile Include="Constants\FortnoxConstants.cs" />
+    <Compile Include="Helpers\ApiHelpers.cs" />
+    <Compile Include="Helpers\CommunicationHelper.cs" />
+    <Compile Include="Helpers\RequestHelper.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Fortnox.Services\Fortnox.Services.csproj">
-      <Project>{d9191f94-8bb8-4304-8bfa-4d9914650fb9}</Project>
-      <Name>Fortnox.Services</Name>
-    </ProjectReference>
+    <Compile Include="ValueObjects\Accounts\Accounts.cs" />
+    <Compile Include="ValueObjects\Accounts\AccountsAccountSubset.cs" />
+    <Compile Include="ValueObjects\Account\Account.cs" />
+    <Compile Include="ValueObjects\Articles\Articles.cs" />
+    <Compile Include="ValueObjects\Articles\ArticlesArticleSubset.cs" />
+    <Compile Include="ValueObjects\Articles\NewDataSet.cs" />
+    <Compile Include="ValueObjects\Article\Article.cs" />
+    <Compile Include="ValueObjects\Article\NewDataSet.cs" />
+    <Compile Include="ValueObjects\ResponseBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Fortnox.ValueObjects.Articles
+namespace Fortnox.Services.ValueObjects.Articles
 {
     public class Articles : ResponseBase
     {

@@ -2,16 +2,16 @@
 using SoftHouse.Scraper.Interfaces;
 using SoftHouse.Scraper.ValueObjects;
 
-namespace Fortnox.Helpers
+namespace Fortnox.Services.Helpers
 {
-    internal class RequestHelper
+    public class RequestHelper
     {
-        internal static string MakeGetRequest(string url, string accessToken, string clientSecret, IHtmlScraper scraper)
+        public static string MakeGetRequest(string url, string accessToken, string clientSecret, IHtmlScraper scraper)
         {
             return MakeRequest(url, null, accessToken, clientSecret, scraper);
         }
 
-        internal static string MakePostRequest(string url, string postdata, string accessToken, string clientSecret, IHtmlScraper scraper)
+        public static string MakePostRequest(string url, string postdata, string accessToken, string clientSecret, IHtmlScraper scraper)
         {
             return MakeRequest(url, postdata, accessToken, clientSecret, scraper);
         }

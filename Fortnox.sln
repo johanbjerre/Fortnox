@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox", "Fortnox\Fortnox.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox.UnitTest", "Fortnox.UnitTest\Fortnox.UnitTest.csproj", "{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fortnox.Services", "Fortnox.Services\Fortnox.Services.csproj", "{D9191F94-8BB8-4304-8BFA-4D9914650FB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1ADD14-6F2D-41ED-A758-B1E71EB69C29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9191F94-8BB8-4304-8BFA-4D9914650FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9191F94-8BB8-4304-8BFA-4D9914650FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9191F94-8BB8-4304-8BFA-4D9914650FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9191F94-8BB8-4304-8BFA-4D9914650FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,10 @@
-﻿using Fortnox.Helpers;
-using Fortnox.ValueObjects.Account;
-using Fortnox.ValueObjects.Accounts;
+﻿using Fortnox.Services.Helpers;
+using Fortnox.Services.ValueObjects.Account;
+using Fortnox.Services.ValueObjects.Accounts;
 
-namespace Fortnox.Api
+// ReSharper disable CheckNamespace
+namespace Fortnox
+// ReSharper restore CheckNamespace
 {
     public static class ApiAccount
     {
@@ -17,8 +19,5 @@ namespace Fortnox.Api
             return ApiHelpers.TryWrap(() => CommunicationHelper.GetAccount(accessToken, clientSecret, number),
                            string.Format("Unable to get account with number '{0}'", number));
         }
-
-
-
     }
 }

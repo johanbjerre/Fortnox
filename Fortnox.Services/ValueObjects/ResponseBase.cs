@@ -1,4 +1,4 @@
-﻿namespace Fortnox.ValueObjects
+﻿namespace Fortnox.Services.ValueObjects
 {
     public class ResponseBase
     {

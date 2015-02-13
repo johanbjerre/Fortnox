@@ -74,6 +74,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fortnox.Services\Fortnox.Services.csproj">
+      <Project>{d9191f94-8bb8-4304-8bfa-4d9914650fb9}</Project>
+      <Name>Fortnox.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fortnox\Fortnox.csproj">
       <Project>{b6411f6c-bc38-4127-9ef2-fe65f55bd5d8}</Project>
       <Name>Fortnox</Name>
